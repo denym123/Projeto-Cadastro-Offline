@@ -4,8 +4,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
   Widget build(BuildContext context){
+    Modular.setInitialRoute("/auth/");
     return MaterialApp.router(
-      title: 'My Smart App',
+      title: 'Cadastro Offline',
       theme: ThemeData(primarySwatch: Colors.blue),
       routerConfig: Modular.routerConfig,
     );

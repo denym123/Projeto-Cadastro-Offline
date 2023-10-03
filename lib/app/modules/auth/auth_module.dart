@@ -4,7 +4,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class AuthModule extends Module{
 
-
   @override
   void binds(i) {
     i.add<AuthStore>(AuthStore.new);
@@ -12,6 +11,6 @@ class AuthModule extends Module{
 
   @override
   void routes(r) {
-    r.child('/auth/', child: (context) => const AuthPage());
+    r.child(Modular.initialRoute, child: (context) => const AuthPage());
   }
 }
