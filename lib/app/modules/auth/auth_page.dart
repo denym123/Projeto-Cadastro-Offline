@@ -20,66 +20,37 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.add), onPressed: () {}),
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text("teste"),
+        title: Text("Login"),
       ),
-      body: Column(
-        children: [
-          InputTextComponent(
-            label: 'teste 1',
-            value: store.test,
-            onChanged: store.setTest,
-            focusNode: store.focusNode1,
-            hasNextFocus: true,
-          ),
-          InputTextComponent(
-            hasNextFocus: true,
-            label: 'teste 2',
-            value: store.test,
-            onChanged: store.setTest,
-            focusNode: store.focusNode2,
-            onSubmitted: (val) {
-              debugPrint(val);
-            },
-          ),
-          InputTextComponent(
-            label: 'teste 1',
-            value: store.test,
-            onChanged: store.setTest,
-            focusNode: store.focusNode3,
-            hasNextFocus: true,
-          ),
-          InputTextComponent(
-            label: 'teste 2',
-            value: store.test,
-            onChanged: store.setTest,
-            focusNode: store.focusNode4,
-            onSubmitted: (val) {
-              debugPrint(val);
-            },
-          ),
-          FilledSmallButton(
-              icon: Icon(Icons.add),
-              label: 'Teste',
-              onTap: () {
-                debugPrint("teste");
-              }),
-          FilledButtonComponent(
-            label: "Teste",
-            onTap: () {
-              debugPrint("teste");
-            },
-          ),
-          GenericTileComponent(
-            firstText: "Teste",
-            secondText: "Teste 2",
-            thirdText: "Teste",
-            onTap: () {
-              debugPrint("teste");
-            },
-          ),
-        ],
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InputTextComponent(
+              value: store.user,
+              onChanged: store.setUser,
+              focusNode: FocusNode(),
+              label: "CPF",
+              hasNextFocus: true,
+            ),
+            InputTextComponent(
+                hasNextFocus: true,
+                value: store.name,
+                onChanged: store.setName,
+                focusNode: FocusNode(),
+                label: "Nome"),
+            InputTextComponent(
+                hasNextFocus: false,
+                value: store.user,
+                onChanged: store.setPassword,
+                focusNode: FocusNode(),
+                label: "Senha"),
+
+
+          ],
+        ),
       ),
     );
   }
