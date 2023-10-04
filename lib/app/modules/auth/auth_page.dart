@@ -1,4 +1,7 @@
 import 'package:cadastro_offline/app/modules/auth/auth_store.dart';
+import 'package:cadastro_offline/app/shared/components/filledbutton_component.dart';
+import 'package:cadastro_offline/app/shared/components/filledsmallbutton_component.dart';
+import 'package:cadastro_offline/app/shared/components/generictile_component.dart';
 import 'package:cadastro_offline/app/shared/components/inputtext_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -54,6 +57,26 @@ class _AuthPageState extends State<AuthPage> {
             focusNode: store.focusNode4,
             onSubmitted: (val) {
               debugPrint(val);
+            },
+          ),
+          FilledSmallButton(
+              icon: Icon(Icons.add),
+              label: 'Teste',
+              onTap: () {
+                debugPrint("teste");
+              }),
+          FilledButtonComponent(
+            label: "Teste",
+            onTap: () {
+              debugPrint("teste");
+            },
+          ),
+          GenericTileComponent(
+            firstText: "Teste",
+            secondText: "Teste 2",
+            thirdText: "Teste",
+            onTap: () {
+              debugPrint("teste");
             },
           ),
         ],

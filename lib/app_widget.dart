@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     Modular.setInitialRoute("/auth/");
     return MaterialApp.router(
       title: 'Cadastro Offline',
-      theme: ThemeData(primaryColor: Color(0xff365848), inputDecorationTheme: InputDecorationTheme(fillColor: Color(0xffE4E2E2)) ,
+      theme: ThemeData(
+        primaryColor: const Color(0xff365848),
+        inputDecorationTheme:
+            const InputDecorationTheme(fillColor: Color(0xffE4E2E2)),
+        cardColor: const Color(0xffF2F1F1)
       ),
       routerConfig: Modular.routerConfig,
     );
