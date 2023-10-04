@@ -7,7 +7,8 @@ class AppWidget extends StatelessWidget {
     Modular.setInitialRoute("/auth/");
     return MaterialApp.router(
       title: 'Cadastro Offline',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primaryColor: Color(0xff365848), inputDecorationTheme: InputDecorationTheme(fillColor: Color(0xffE4E2E2)) ,
+      ),
       routerConfig: Modular.routerConfig,
     );
   }
