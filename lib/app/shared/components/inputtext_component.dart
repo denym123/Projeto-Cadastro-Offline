@@ -16,7 +16,7 @@ class InputTextComponent extends StatefulWidget {
   final bool? isPasswordInput;
   final String? value;
   final String? hintText;
-  final Function onChanged;
+  final Function(String value) onChanged;
   final Function(String value)? onSubmitted;
   final FocusNode focusNode;
   final bool? hasNextFocus;
@@ -58,15 +58,14 @@ class _InputTextComponentState extends State<InputTextComponent> {
               fontSize: 18),
         ),
         TextFormField(
+          onTapOutside: (event) => widget.focusNode.unfocus(),
           obscureText: widget.isPasswordInput ?? false,
           textInputAction: widget.hasNextFocus ?? false
               ? TextInputAction.next
               : TextInputAction.done,
           onFieldSubmitted: widget.onSubmitted,
           focusNode: widget.focusNode,
-          onChanged: (value) {
-            widget.onChanged;
-          },
+          onChanged: widget.onChanged,
           controller: textEditingController,
           decoration: InputDecoration(
             suffixIcon: widget.isPasswordInput ?? false ? IconButton(

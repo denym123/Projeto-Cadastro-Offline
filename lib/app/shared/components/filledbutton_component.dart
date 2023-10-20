@@ -5,7 +5,7 @@ class FilledButtonComponent extends StatelessWidget {
     required this.onTap});
 
   final String label;
-  final Function() onTap;
+  final Function()? onTap;
 
 
   @override
@@ -16,8 +16,8 @@ class FilledButtonComponent extends StatelessWidget {
         fixedSize: MaterialStateProperty.all(const Size(double.maxFinite, 73)),
         shape: MaterialStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-        backgroundColor:
-        MaterialStateProperty.all(Theme.of(context).primaryColor),
+        backgroundColor: onTap != null ?
+        MaterialStateProperty.all(Theme.of(context).primaryColor) : MaterialStateProperty.all(Colors.grey),
       ),
       child: Text(
         label,
